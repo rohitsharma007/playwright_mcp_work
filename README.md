@@ -76,3 +76,19 @@ Automated UI tests built with Playwright (TypeScript) to explore and validate ke
 
 ---
 This README serves as the central reference for how the project’s folders, files, and execution flow connect. Use the guardrails to keep new tests consistent, resilient, and easy to debug with Playwright traces.
+
+## Local Setup
+- Prerequisites: Node.js 18+, npm 9+, Git
+- Clone the repo: `git clone https://github.com/rohitsharma007/playwright_mcp_work.git`
+- Change directory: `cd playwright_mcp_work`
+- Install dependencies: `npm install`
+- Install Playwright browsers: `npx playwright install`
+- Run all tests: `npx playwright test`
+- Run a specific test headed with trace: `npx playwright test tests/flipkart-search.spec.ts --headed --trace=on`
+- Open a trace viewer: `npx playwright show-trace test-results/<run-folder>/trace.zip --port 9362`
+- Generate selectors interactively (optional): `npx playwright codegen https://www.flipkart.com/`
+
+## Common Troubleshooting
+- Overlays blocking interactions: use `dismissOverlays(page)` helper in tests; in exploration, press Escape or close `✕`.
+- Selector stability: prefer `getByRole`, `getByLabel`, `getByPlaceholder`; avoid strict href matching.
+- Slow loads: do not add timeouts; rely on Playwright’s auto-waiting with correct locators and `expect` assertions.
