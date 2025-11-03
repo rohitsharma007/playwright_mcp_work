@@ -83,6 +83,7 @@ This README serves as the central reference for how the project’s folders, fil
 - Change directory: `cd playwright_mcp_work`
 - Install dependencies: `npm install`
 - Install Playwright browsers: `npx playwright install`
+- Start MCP server (IDE integration): `npm run mcp` (manual: `npx @playwright/mcp@latest`)
 - Run all tests: `npx playwright test`
 - Run a specific test headed with trace: `npx playwright test tests/flipkart-search.spec.ts --headed --trace=on`
 - Open a trace viewer: `npx playwright show-trace test-results/<run-folder>/trace.zip --port 9362`
